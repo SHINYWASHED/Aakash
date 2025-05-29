@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Full-screen Background Video -->
+  <video id="background-video" autoplay muted loop playsinline></video>
+
+  <!-- Dark Mode Toggle -->
+  <div class="dark-mode-toggle">
+    <label class="switch">
+      <input type="checkbox" id="darkModeSwitch" onchange="toggleDarkMode()" />
+      <span class="slider round"></span>
+    </label>
+  </div>
+
+  <!-- Glassmorphic Container -->
+  <div class="container">
+    <h1>Weather Forecast</h1>
+    <input type="text" id="city" placeholder="Enter city name" />
+    <button onclick="getWeather()">Get Weather</button>
+    <button onclick="getWeatherByLocation()">Use My Location</button>
+
+    <div id="weather" class="weather-info"></div>
+    <div class="chart-container">
+      <canvas id="weatherChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
