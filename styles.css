@@ -40,7 +40,7 @@ body.dark-mode {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.18);
   z-index: 1;
-  position: relative;
+  position: relative; /* Ensure this is set for positioning absolute children like suggestions */
 }
 
 body.dark-mode .container {
@@ -60,7 +60,8 @@ input {
   font-size: 16px;
   border: 2px solid #007bff;
   border-radius: 5px;
-  margin-bottom: 10px;
+  margin-bottom: 10px; /* Keep this to ensure spacing */
+  box-sizing: border-box; /* Include padding/border in width calculation */
 }
 
 button {
@@ -164,4 +165,50 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+/* NEW: Styles for City Suggestions */
+.city-suggestions {
+  position: absolute; /* Position relative to the .container */
+  top: 125px; /* Approximate positioning below the input field and h1 */
+  left: 20px; /* Aligned with the container's padding-left, matching input */
+  width: 70%; /* Match the width of the input field */
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000; /* Ensure it's above other content */
+  max-height: 200px; /* Limit height and enable scrolling */
+  overflow-y: auto;
+  border: 1px solid #007bff;
+  display: none; /* Hidden by default, shown by JavaScript */
+  backdrop-filter: blur(5px); /* Apply a slight blur effect */
+  -webkit-backdrop-filter: blur(5px);
+}
+
+body.dark-mode .city-suggestions {
+  background: rgba(30, 30, 30, 0.95);
+  color: #eee;
+  border: 1px solid #2196f3;
+}
+
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee; /* Separator for items */
+}
+
+body.dark-mode .suggestion-item {
+    border-bottom: 1px solid #333;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none; /* No separator for the last item */
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+body.dark-mode .suggestion-item:hover {
+  background-color: #666;
 }
