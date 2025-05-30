@@ -10,13 +10,13 @@ const iconMap = {
 
 // Your own videos folder with video files matching weather conditions
 const backgroundMap = {
-  Clear: "videos/clear_sky.mp4",
-  Clouds: "videos/cloudy.mp4",
-  Rain: "videos/rain.mp4",
-  Drizzle: "videos/drizzle.mp4",
-  Thunderstorm: "videos/thunderstorm.mp4",
-  Snow: "videos/snow.mp4",
-  Mist: "videos/mist.mp4",
+  Clear: "video/clear_sky.mp4",
+  Clouds: "video/cloudy.mp4",
+  Rain: "video/rain.mp4",
+  Drizzle: "video/drizzle.mp4",
+  Thunderstorm: "video/thunderstorm.mp4",
+  Snow: "video/snow.mp4",
+  Mist: "video/mist.mp4",
 };
 
 let weatherChart;
